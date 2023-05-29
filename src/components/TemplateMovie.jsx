@@ -8,7 +8,7 @@ const TemplateMovie = (props) =>{
                 <h2>{props.movieTitle}</h2>
                 <p>{props.movieDescription}</p>
                 <div className='content'>
-                    <img src={props.movieImg} alt='Desculpe não encontrei uma imagem'/>
+                    <img src={props.movieImg}/>
                     <ul>
                         <li className="item">{props.movieGenre}</li>
                         <li className="item">{props.movieYear}</li>
