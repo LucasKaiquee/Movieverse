@@ -1,9 +1,13 @@
 input {
     width: 80%;
-    background-color: rgb(3, 171, 213);
-    border: 2px solid rgb(255, 255, 255);
+    background-color: #03abd5;
+    border: 2px solid #e803f8;
     height: 40px;
-    color: ;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 20px;
+    margin-top: 20px;
+    padding-left: 10px;
 }
 
 button {
@@ -13,8 +17,12 @@ button {
     font-size: 20px;
     cursor: pointer;
     margin-left: 10px;
+    background-color: #03abd5;
+    border: 2px solid #e803f8;
+    color: #fff;
 }
 
 button:hover {
     transform: scale(1.1);
+    transition: 0.3s;
 }
