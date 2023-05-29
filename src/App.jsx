@@ -1,5 +1,5 @@
 import './App.css'
-import InputMovie from './assets/components/InputMovie'
+import InputMovie from './components/InputMovie'
 
 function App() {
 
