@@ -19,7 +19,7 @@ const InputMovie = () => {
   const getMovie = () => {
 
     axios
-      .get(`http://www.omdbapi.com/?apikey=${apiKey}&t=${title}`)
+      .get(`https://www.omdbapi.com/?apikey=${apiKey}&t=${title}`)
       .then((response) => {
         console.log(response.data);
 
