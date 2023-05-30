@@ -25,6 +25,8 @@
 @media screen and (max-width: 800px) {
     .content {
         flex-direction: column-reverse;
+        gap: 50px;
+        margin-top: 40px;
     }
 
     .content ul {
@@ -34,6 +36,7 @@
 
     img {
         width: 50%;
+        align-self: center;
     }
 }
 

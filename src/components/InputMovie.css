@@ -6,7 +6,6 @@ input {
     border-radius: 10px;
     color: #fff;
     font-size: 20px;
-    margin-top: 20px;
     padding-left: 10px;
 }
 
@@ -25,6 +24,13 @@ button {
 button:hover {
     transform: scale(1.1);
     transition: 0.3s;
+}
+
+.container-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 @media screen and (max-width: 800px) {

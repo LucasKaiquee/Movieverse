@@ -65,8 +65,10 @@ const InputMovie = () => {
   return (
     <>
       <div>
-        <input type="text" value={title} onChange={handleTitleChange} onKeyDown={handleEnterDown}/>
-        <button onClick={getMovie}>Buscar</button>
+        <div className='container-input'>
+            <input type="text" value={title} onChange={handleTitleChange} onKeyDown={handleEnterDown}/>
+            <button onClick={getMovie}>Buscar</button>
+        </div>
         <TemplateMovie movieTitle={result} movieImg={imgT} movieDescription={description} movieGenre={genre} movieYear={year} movieActors={actors} movieDirector={director} movieReating={imdb}/>
       </div>
     </>
