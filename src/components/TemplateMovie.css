@@ -22,4 +22,18 @@
     margin: 10px;
 }
 
+@media screen and (max-width: 800px) {
+    .content {
+        flex-direction: column-reverse;
+    }
+
+    .content ul {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    img {
+        width: 50%;
+    }
+}
 
