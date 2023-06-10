@@ -1,14 +1,12 @@
 import './App.css'
 import InputMovie from './components/InputMovie'
+import Navbar from './components/Navbar'
 
 function App() {
 
   return (
     <>
-      <div>
-        <h1>Movie Verse</h1>
-      </div>
-      <InputMovie />
+      <Navbar />
     </>
   )
 }

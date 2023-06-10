@@ -1,21 +1,17 @@
 input {
-    width: 80%;
     background-color: #03abd5;
     border: 2px solid #e803f8;
     height: 40px;
     border-radius: 10px;
     color: #fff;
     font-size: 20px;
-    padding-left: 10px;
 }
 
 button {
-    width: 10%;
     height: 42px;
     border-radius: 10px;
     font-size: 20px;
     cursor: pointer;
-    margin-left: 10px;
     background-color: #03abd5;
     border: 2px solid #e803f8;
     color: #fff;
@@ -28,18 +24,7 @@ button:hover {
 
 .container-input {
     display: flex;
+    gap: 10px;
+    height: 100%;
     align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-@media screen and (max-width: 800px) {
-    input {
-        width: 60%;
-    }
-
-    button {
-        width: 20%;
-        font-size: 1rem;
-    }
 }

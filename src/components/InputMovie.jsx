@@ -75,4 +75,4 @@ const InputMovie = () => {
   );
 };
 
-export default InputMovie
+export default InputMovie  
