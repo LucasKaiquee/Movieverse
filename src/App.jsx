@@ -1,12 +1,13 @@
 import './App.css'
-import InputMovie from './components/InputMovie'
 import Navbar from './components/Navbar'
+import BestMovies from './components/BestMovies'
 
-function App() {
+function App(){
 
   return (
     <>
       <Navbar />
+      <BestMovies />
     </>
   )
 }
