@@ -3,7 +3,6 @@ import axios from 'axios'
 import { useState } from 'react';
 import TemplateMovie from './TemplateMovie';
 
-
 const InputMovie = () => {
   const apiKey = 'a4afc84b';
   const [title, setTitle] = useState('');
