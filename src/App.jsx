@@ -1,14 +1,15 @@
 import './App.css'
-import Navbar from './components/Navbar'
-import BestMovies from './components/BestMovies'
+import { Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import SearchTemplate from './pages/SerarchTemplate'
 
 function App(){
 
   return (
-    <>
-      <Navbar />
-      <BestMovies />
-    </>
+    <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="Search" element={<SearchTemplate/>}/>
+    </Routes>
   )
 }
 
