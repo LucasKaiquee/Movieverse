@@ -1,9 +1,7 @@
-import TemplateMovie from "./TemplateMovie"
-
 const TemplateButton = () => {
     return(
         <>
-            <button></button>
+            <button>Detalhes</button>
         </>
     )
 }

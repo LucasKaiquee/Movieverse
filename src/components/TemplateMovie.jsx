@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import './TemplateMovie.css'
 
 const TemplateMovie = (props) =>{
-    
+
     return (
         <> 
             <div className='container'>
