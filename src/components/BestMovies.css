@@ -1,3 +1,25 @@
+.best-h {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.best-p {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 30px;
+}
+
+.select-best {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 0;
+}
+
 .container-movies {
     display: flex;
     flex-wrap: wrap;
