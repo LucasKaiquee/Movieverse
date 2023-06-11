@@ -4,11 +4,13 @@ nav {
     height: 70px;
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
 }
 
 h1 {
     font-size: 40px;
     align-self: center;
+    margin-bottom: 3px;
 }
 
 .container-logo {

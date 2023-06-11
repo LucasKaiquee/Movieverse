@@ -1,14 +1,17 @@
-input {
+.container-input input {
     background-color: #03abd5;
     border: 2px solid #e803f8;
     height: 40px;
     border-radius: 10px;
+    width: 500px;
     color: #fff;
     font-size: 20px;
 }
 
-button {
+.container-input button {
     height: 42px;
+    width: 100px;
+    font-weight: bold;
     border-radius: 10px;
     font-size: 20px;
     cursor: pointer;
@@ -17,7 +20,7 @@ button {
     color: #fff;
 }
 
-button:hover {
+.container-input button:hover {
     transform: scale(1.1);
     transition: 0.3s;
 }
@@ -27,4 +30,12 @@ button:hover {
     gap: 10px;
     height: 100%;
     align-items: center;
+}
+
+.container-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 70px;
 }

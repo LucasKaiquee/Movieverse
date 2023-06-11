@@ -1,4 +1,4 @@
-import InputMovie from "./InputMovie"
+import Search from "./Search"
 import {FaFilm } from "react-icons/fa" 
 
 import "./Navbar.css"
@@ -13,7 +13,7 @@ const Navbar = () => {
                     <h1>Movie Verse</h1>
                 </div>
                 
-                <InputMovie />
+                <Search />
             </nav>
         </>
     )

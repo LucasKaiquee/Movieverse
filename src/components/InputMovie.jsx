@@ -8,15 +8,15 @@ const InputMovie = () => {
   const [title, setTitle] = useState('');
   const [result, setResult]  = useState('');
   const [imgT, setImgT] = useState('');
-  const [description, setDescription] = useState('');
+  const [description, setDescription] = useState('Olá, que tal buscar por seu filme ou série favorito ?');
   const [genre, setGenre] = useState('');
   const [actors, setActor]= useState('');
   const [imdb, setImdb] = useState('');
   const [director, setDirector] = useState('');
   const [year, setYear] = useState('');
-  
-  const getMovie = () => {
 
+  const getMovie = () => {
+    
     axios
       .get(`https://www.omdbapi.com/?apikey=${apiKey}&t=${title}`)
       .then((response) => {
@@ -63,12 +63,22 @@ const InputMovie = () => {
 
   return (
     <>
-      <div>
+      <div className='container-div'>
         <div className='container-input'>
             <input type="text" value={title} onChange={handleTitleChange} onKeyDown={handleEnterDown}/>
             <button onClick={getMovie}>Buscar</button>
         </div>
-        <TemplateMovie movieTitle={result} movieImg={imgT} movieDescription={description} movieGenre={genre} movieYear={year} movieActors={actors} movieDirector={director} movieReating={imdb}/>
+
+        <TemplateMovie 
+          movieTitle={result} 
+          movieImg={imgT} 
+          movieDescription={description} 
+          movieGenre={genre} 
+          movieYear={year} 
+          movieActors={actors} 
+          movieDirector={director} 
+          movieReating={imdb}
+        />
       </div>
     </>
   );
