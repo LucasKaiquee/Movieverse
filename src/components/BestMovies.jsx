@@ -1,6 +1,6 @@
-import Card from "./Card"
+import Card from "./card"
 import { useState, useEffect} from "react"
-import { FaStar } from "react-icons/fa";
+import { FaStar } from "react-icons/fa"
 
 import "./BestMovies.css"
 

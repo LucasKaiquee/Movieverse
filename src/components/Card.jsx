@@ -32,7 +32,7 @@ const Card = (props) => {
                 <img src={title} />
                 <div className="content-card">
                   <p><FaStar color="#FFFF00" /> {titleRating}</p>
-                  <TemplateButton />
+                  <TemplateButton title={props.bestTitleMovie}/>
                 </div>
             </div>
         </>
