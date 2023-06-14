@@ -16,6 +16,7 @@ const TemplateMovie = (props) =>{
                         <li className="item">{props.movieActors}</li>
                         <li className="item">{props.movieDirector}</li>
                         <li className="item">{props.movieReating}</li>
+                        <li className='item'>{props.movieAward}</li>
                     </ul>
                 </div>
             </div>
