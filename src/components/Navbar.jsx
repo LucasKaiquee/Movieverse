@@ -1,9 +1,10 @@
-import Search from "./Search"
+import InputMovie from "./InputMovie"
 import {FaFilm } from "react-icons/fa" 
 
 import "./Navbar.css"
 
-const Navbar = () => {
+// eslint-disable-next-line react/prop-types
+const Navbar = ({test}) => {
 
     return (
         <>
@@ -12,8 +13,9 @@ const Navbar = () => {
                     <FaFilm color="#e803f8" size={45}/>
                     <h1>Movie Verse</h1>
                 </div>
-                
-                <Search />
+                <div className="input">
+                    <InputMovie test={test}/>
+                </div>
             </nav>
         </>
     )

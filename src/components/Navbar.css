@@ -18,3 +18,9 @@ h1 {
     align-items: center;
     gap: 5px;
 }
+
+.input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
