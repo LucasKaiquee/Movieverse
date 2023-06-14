@@ -24,8 +24,10 @@
 .container-movies {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
+    width: 90%;
     justify-content: center;
+    margin: auto;
+    align-items: center;
     gap: 40px;
 }
 
