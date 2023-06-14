@@ -8,18 +8,21 @@ import { useLocation } from "react-router-dom"
 import './SearchTemplate.css'
 
 const SearchTemplate = () => {
-    const apiKey = 'a4afc84b';
+  const apiKey = 'a4afc84b';
+
+  const location = useLocation()
+  const state = location.state
+
+  const [result, setResult]  = useState('')
+  const [imgT, setImgT] = useState('')
+  const [description, setDescription] = useState('')
+  const [genre, setGenre] = useState('')
+  const [actors, setActor]= useState('')
+  const [imdb, setImdb] = useState('')
+  const [director, setDirector] = useState('')
+  const [year, setYear] = useState('')
+  const [award, setAward] = useState('')
     
-    const [result, setResult]  = useState('');
-    const [imgT, setImgT] = useState('');
-    const [description, setDescription] = useState('');
-    const [genre, setGenre] = useState('');
-    const [actors, setActor]= useState('');
-    const [imdb, setImdb] = useState('');
-    const [director, setDirector] = useState('');
-    const [year, setYear] = useState('');
-    const location = useLocation()
-    const state = location.state
 
   const getMovie = () => {
     console.log(state)
@@ -27,7 +30,6 @@ const SearchTemplate = () => {
     axios
       .get(`https://www.omdbapi.com/?apikey=${apiKey}&t=${state}`)
       .then((response) => {
-        console.log(response.data)
 
         if(response.data.Response === "False" || response.data.Title === "Null") {
             setResult("Não encontrei nada")
@@ -42,6 +44,7 @@ const SearchTemplate = () => {
             setImdb("IMDB: " + response.data.imdbRating)
             setYear("Ano: " + response.data.Year)
             setDirector("Diretor: " + response.data.Director)
+            setAward("Premiação: " + response.data.Awards)
         }
       })
       .catch((error) => {
@@ -56,6 +59,7 @@ const SearchTemplate = () => {
         setImdb()
         setYear()
         setActor()
+        setAward()
   };
 
   useEffect(() => {
@@ -64,19 +68,24 @@ const SearchTemplate = () => {
 
     return (
 
-        <>
+        <div className="template">
             <Navbar test={1}/>
             <TemplateMovie 
-            movieTitle={result} 
-            movieImg={imgT} 
-            movieDescription={description} 
-            movieGenre={genre} 
-            movieYear={year} 
-            movieActors={actors} 
-            movieDirector={director} 
-            movieReating={imdb}
+              movieTitle={result} 
+              movieImg={imgT} 
+              movieDescription={description} 
+              movieGenre={genre} 
+              movieYear={year} 
+              movieActors={actors} 
+              movieDirector={director} 
+              movieReating={imdb}
+              movieAward={award}
             />
-        </>
+
+            <footer>
+                <h4>Lucas Kaique &copy; 2023</h4>
+            </footer>
+        </div>
 
     )
 }

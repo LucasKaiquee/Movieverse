@@ -9,6 +9,18 @@
   padding: 0;
 }
 
+html ::-webkit-scrollbar {
+  width: 3px;
+}
+html ::-webkit-scrollbar-thumb {
+  border-radius: 50px;
+  background: #e803f8;
+  width: 3px;
+}
+html ::-webkit-scrollbar-track {
+  width: 3px;
+}
+
 body {
  background-color: #233137;
   background-repeat: no-repeat;

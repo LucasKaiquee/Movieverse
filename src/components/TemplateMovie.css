@@ -1,19 +1,33 @@
 .container {
     display: flex;
     flex-direction: column;
+    text-align: center;
     gap: 20px;
     margin-top: 30px;
+}
+
+.container h2 {
+    font-size: 30px;
+    color: #03abd5;
+    margin-bottom: 30px;
+}
+
+.container p {
+    width: 50%;
+    margin: auto;
+    margin-bottom: 30px;
 }
 
 .content {
     display: flex;
     justify-content: space-evenly;
+    margin: auto;
 }
 
 .content ul {
     list-style: none;
     text-align: left;
-    font-size: 25px;
+    font-size: 20px;
     align-self: center;
     width: 30%;
 }

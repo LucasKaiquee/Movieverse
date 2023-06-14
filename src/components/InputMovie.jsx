@@ -24,7 +24,7 @@ const InputMovie = ({test}) => {
     <>
       <div className='container-div'>
         <div className='container-input'>
-            <input type="text" value={title} onChange={handleTitleChange} />
+            <input type="text" value={title} onChange={handleTitleChange} placeholder='Pesquisar'/>
             <Search getPage={handleClickBack}/>
         </div>
       </div>

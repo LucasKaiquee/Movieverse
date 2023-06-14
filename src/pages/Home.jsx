@@ -9,6 +9,7 @@ const Home = () => {
         <>
             <Navbar/>
             <BestMovies/>
+            
             <footer>
                 <h4>Lucas Kaique &copy; 2023</h4>
             </footer>

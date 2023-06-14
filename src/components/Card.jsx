@@ -15,7 +15,6 @@ const Card = (props) => {
         axios
           .get(`https://www.omdbapi.com/?apikey=${apiKey}&t=${props.bestTitleMovie}`)
           .then((response) => {
-            console.log(response.data);
             setTitle(response.data.Poster)
             setTitleRating(response.data.imdbRating)
           })

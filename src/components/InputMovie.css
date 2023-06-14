@@ -1,19 +1,24 @@
 .container-input input {
     background-color: #03abd5;
     border: 2px solid #e803f8;
-    height: 40px;
+    height: 25px;
     border-radius: 10px;
-    width: 200px;
+    width: 250px;
     color: #fff;
-    font-size: 20px;
+    font-size: 16px;
+    padding: 2px;
+}
+
+.container-input input::placeholder {
+    color: #fff;
 }
 
 .container-input button {
-    height: 42px;
+    height: 30px;
     width: 100px;
     font-weight: bold;
     border-radius: 10px;
-    font-size: 20px;
+    font-size: 16px;
     cursor: pointer;
     background-color: #03abd5;
     border: 2px solid #e803f8;
@@ -32,10 +37,8 @@
     align-items: center;
 }
 
-.container-div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-top: 70px;
+@media screen and (max-width: 700px) {
+    .container-input input {
+        width: 160px;
+    }
 }
