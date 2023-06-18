@@ -25,8 +25,6 @@ const SearchTemplate = () => {
     
 
   const getMovie = () => {
-    console.log(state)
-    
     axios
       .get(`https://www.omdbapi.com/?apikey=${apiKey}&t=${state}`)
       .then((response) => {
