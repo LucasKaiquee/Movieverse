@@ -33,7 +33,7 @@ const SearchTemplate = () => {
 
         if(response.data.Response === "False" || response.data.Title === "Null") {
             setResult("Não encontrei nada")
-            setDescription("Verifique se o nome que digitou está correto ...")
+            setDescription("Verifique se o que digitou está correto ...")
         }
         else {
             setResult(response.data.Title)

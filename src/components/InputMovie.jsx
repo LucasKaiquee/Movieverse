@@ -8,7 +8,7 @@ const InputMovie = ({test}) => {
   const [title, setTitle] = useState('');
   const navigate = useNavigate();
 
-  const handleClickBack = () => {
+  const handleClickSearch = () => {
     if(test === 1){
       navigate('/Search', {state: title})
     } else {
@@ -20,12 +20,18 @@ const InputMovie = ({test}) => {
     setTitle(event.target.value);
   };
 
+  const handleEnterDown = (event) => {
+    if (event.key === "Enter") {
+      handleClickSearch()
+    }
+  }
+
   return (
     <>
       <div className='container-div'>
         <div className='container-input'>
-            <input type="text" value={title} onChange={handleTitleChange} placeholder='Pesquisar'/>
-            <Search getPage={handleClickBack}/>
+            <input type="text" value={title} onChange={handleTitleChange} placeholder='Pesquisar' onKeyDown={handleEnterDown}/>
+            <Search getPage={handleClickSearch}/>
         </div>
       </div>
     </>
