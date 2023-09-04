@@ -1,7 +1,7 @@
 .container-input input {
-    background-color: #03abd5;
-    border: 2px solid #e803f8;
-    height: 25px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 2px solid #ffff;
+    height: 40px;
     border-radius: 10px;
     width: 250px;
     color: #fff;
@@ -14,14 +14,14 @@
 }
 
 .container-input button {
-    height: 30px;
-    width: 100px;
+    height: 40px;
+    width: 80px;
     font-weight: bold;
     border-radius: 10px;
     font-size: 16px;
     cursor: pointer;
-    background-color: #03abd5;
-    border: 2px solid #e803f8;
+    background-color: rgba(255, 255, 255, 0);
+    border: 2px solid #ffff;
     color: #fff;
 }
 

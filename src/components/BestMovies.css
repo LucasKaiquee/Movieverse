@@ -1,30 +1,41 @@
+.container-template {
+    width: 80%;
+    margin: auto;
+}
+
 .best-h {
-    text-align: center;
     margin-top: 40px;
+    font-size: 3rem;
+    color: #FA023C;
 }
 
 .best-p {
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 5px;
+    font-size: 1.5rem;
     margin-top: 30px;
 }
 
 .select-best {
-    display: flex;
-    gap: 5px;
-    align-items: center;
-    justify-content: center;
-    margin: 40px 0;
+    padding: 1.3rem 0; 
+}
+
+.button {
+    margin-right: 2rem;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #C8FF00;
+    padding-bottom: 0.2rem;
+}
+
+.button-active {
+    border-bottom: 2px solid #FA023C;
 }
 
 .container-movies {
     display: flex;
     flex-wrap: wrap;
-    width: 90%;
+    width: 100%;
     justify-content: center;
     margin: auto;
     align-items: center;

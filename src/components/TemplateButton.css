@@ -1,0 +1,14 @@
+.template-button {
+    background-color: #FA023C;
+    border: none;
+    padding: 0.2rem 0.5rem;
+    border-radius: 8px;
+    color: #ffff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.template-button:hover {
+    transform: scale(1.2);
+    transition: 0.3s;
+}

@@ -1,63 +1,68 @@
 import Card from "./Card";
+import axios from "axios";
 import { useState, useEffect} from "react"
-import { FaStar } from "react-icons/fa"
 
 import "./BestMovies.css"
 
 const BestMovies = () => {
-    const [changeResource, setChangeResource] = useState([]);
-    const [type, setType] = useState('')
+    const [result, setResult] = useState([])
 
-    const typeFilm = 'Filmes'
-    const typeSerie = 'Séries'
+    const apiKey = '4d58cfce7093e670754f1a8a8ceac28f';
+    const [type, setType] = useState("")
+    const changeResource = [
+      "movie/popular",
+      "movie/top_rated",
+      "movie/upcoming",
+      "movie/now_playing",
+      "trending/all/day",
+      "trending/all/week",
+    ]
 
-    const bestTitles = [
-      'The Shawshank Redemption',
-      'The Godfather',
-      'The Godfather: Part II',
-      '12 Angry Men',
-      "Schindler's List",
-      'The Lord of the Rings: The Return of the King',
-      'Pulp Fiction',
-      'The Good, the Bad and the Ugly',
-      'The Lord of the Rings: The Fellowship of the Ring'
-    ];
-  
-    const bestSeries = [
-      'Breaking Bad',
-      'Planet Earth II',
-      'Band of Brothers',
-      'Game of Thrones',
-      'Chernobyl',
-      'The Wire',
-      'Our Planet',
-      'The Sopranos',
-      'Rick and Morty'
-    ];
-  
-    const handleChangeResource = (titles, type) => {
-      setChangeResource(titles);
+    const searchMovie = (type) => {
+      axios
+        .get(`https://api.themoviedb.org/3/${type}?api_key=${apiKey}`)
+        .then((response) => {
+          setResult(response.data.results)
+        })
+          
+        .catch((error) =>{
+          console.error(error)
+        })
+    } 
+
+    const handleChangeResource = (type) => {
+      searchMovie(type)
       setType(type)
     };
-  
+
     useEffect(() => {
-      handleChangeResource(bestTitles, typeFilm);
+      searchMovie(changeResource[0])
+      setType(changeResource[0])
     }, []); 
-  
+
     return (
-      <>
-        <h1 className="best-h">Melhores {type}</h1>
-        <p className="best-p"><FaStar color="#FFFF00" size={20}/> Esses são os Títulos melhores avaliados no IMDB para {type}</p>
+      <section className="container-template">
+        <h1 className="best-h">Recomendações</h1>
+        <p className="best-p">Descubra Filmes em destaque</p>
         <div className="select-best">
-          <button onClick={() => handleChangeResource(bestTitles, typeFilm)}>Filmes</button>
-          <button onClick={() => handleChangeResource(bestSeries, typeSerie)}>Séries</button>
+          <button className={type === changeResource[0] ? "button " + "button-active" : "button"} onClick={() => handleChangeResource(changeResource[0])}>Populares</button>
+          <button className={type === changeResource[1] ? "button " + "button-active" : "button"} onClick={() => handleChangeResource(changeResource[1])}>Bem avaliados</button>
+          <button className={type === changeResource[2] ? "button " + "button-active" : "button"} onClick={() => handleChangeResource(changeResource[2])}>Recentes</button>
+          <button className={type === changeResource[3] ? "button " + "button-active" : "button"} onClick={() => handleChangeResource(changeResource[3])}>Em cartaz</button>
+          <button className={type === changeResource[4] ? "button " + "button-active" : "button"} onClick={() => handleChangeResource(changeResource[4])}>Destaques do dia</button>
+          <button className={type === changeResource[5] ? "button " + "button-active" : "button"} onClick={() => handleChangeResource(changeResource[5])}>Destaques da semana</button>
         </div>
         <div className="container-movies">
-          {changeResource.map((title, index) => (
-            <Card key={index} bestTitleMovie={title} />
+          {result.map((result, index) => (
+            <Card
+             key={index} 
+             path={result.poster_path} 
+             title={result.title}
+             voteAverage={result.vote_average}
+             />
           ))}
         </div>
-      </>
+      </section>
     );
   };
   

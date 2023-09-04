@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom"
 
+import "./TemplateButton.css"
+
 // eslint-disable-next-line react/prop-types
 const TemplateButton = ({title}) => {
     const naviagte = useNavigate('')
@@ -10,7 +12,7 @@ const TemplateButton = ({title}) => {
 
     return(
         <>
-            <button onClick={handleBestPage}>Detalhes</button>
+            <button className="template-button" onClick={handleBestPage}>Detalhes</button>
         </>
     )
 }

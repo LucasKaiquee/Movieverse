@@ -8,7 +8,7 @@ import { useLocation } from "react-router-dom"
 import './SearchTemplate.css'
 
 const SearchTemplate = () => {
-  const apiKey = 'a4afc84b';
+  const apiKey = '4d58cfce7093e670754f1a8a8ceac28f';
 
   const location = useLocation()
   const state = location.state
@@ -26,7 +26,7 @@ const SearchTemplate = () => {
 
   const getMovie = () => {
     axios
-      .get(`https://www.omdbapi.com/?apikey=${apiKey}&t=${state}`)
+      .get(`https://api.themoviedb.org/3/search/batmam/?api_key=${apiKey}`)
       .then((response) => {
 
         if(response.data.Response === "False" || response.data.Title === "Null") {
@@ -34,16 +34,19 @@ const SearchTemplate = () => {
             setDescription("Verifique se o que digitou está correto ...")
         }
         else {
-            setResult(response.data.Title)
-            setImgT(response.data.Poster)
-            setDescription(response.data.Plot)
-            setGenre("Gênero: " + response.data.Genre)
-            setActor("Elenco: " + response.data.Actors)
-            setImdb("IMDB: " + response.data.imdbRating)
-            setYear("Ano: " + response.data.Year)
-            setDirector("Diretor: " + response.data.Director)
-            setAward("Premiação: " + response.data.Awards)
+            setResult(response.data.title)
+            setImgT(response.data.poster_path)
+            setDescription(response.data.overview)
+            setGenre("Gênero: " + response.data.original_language)
+            setActor("Elenco: " + response.data.release_date)
+            setImdb("IMDB: " + response.data.vote_average)
+            setYear("Ano: " + response.data.release_date)
+            // setDirector("Diretor: " + response.data.Director)
+            // setAward("Premiação: " + response.data.Awards)
+            console.log(response.data)
         }
+
+        console.log("hdcgb")
       })
       .catch((error) => {
         console.error(error);
@@ -75,9 +78,9 @@ const SearchTemplate = () => {
               movieGenre={genre} 
               movieYear={year} 
               movieActors={actors} 
-              movieDirector={director} 
+              // movieDirector={director} 
               movieReating={imdb}
-              movieAward={award}
+              // movieAward={award}
             />
 
             <footer>

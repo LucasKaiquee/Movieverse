@@ -1,37 +1,20 @@
 /* eslint-disable react/prop-types */
-import axios from "axios"
-import { useState } from "react";
 import { FaStar } from "react-icons/fa";
 import TemplateButton from "./TemplateButton";
 
 import "./Card.css"
 
 const Card = (props) => {
-    const apiKey = 'a4afc84b';
-    const [title, setTitle] = useState('')
-    const [titleRating, setTitleRating] = useState('')
-
-    const Movie = () => {
-        axios
-          .get(`https://www.omdbapi.com/?apikey=${apiKey}&t=${props.bestTitleMovie}`)
-          .then((response) => {
-            setTitle(response.data.Poster)
-            setTitleRating(response.data.imdbRating)
-          })
-          .catch((error) => {
-            console.error(error);
-          });
-    }
-
-    Movie()
+    const imgPath = "https://image.tmdb.org/t/p/w500/"
     
     return (
         <>
             <div className="container-card">
-                <img src={title} />
+
+                <img className="img-card" src={imgPath + props.path} />
                 <div className="content-card">
-                  <p><FaStar color="#FFFF00" /> {titleRating}</p>
-                  <TemplateButton title={props.bestTitleMovie}/>
+                  <p><FaStar color="#FFFF00" /> {props.voteAverage}</p>
+                  <TemplateButton title={props.title}/>
                 </div>
             </div>
         </>
