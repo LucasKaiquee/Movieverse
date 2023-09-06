@@ -33,3 +33,7 @@ body {
   background-size: 100%;
   height: 100vh;
 }
+
+p {
+  line-height: 1.8rem;
+}
