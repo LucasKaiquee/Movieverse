@@ -14,7 +14,7 @@ const Card = (props) => {
                 <img className="img-card" src={imgPath + props.path} />
                 <div className="content-card">
                   <p><FaStar color="#FFFF00" /> {props.voteAverage}</p>
-                  <TemplateButton title={props.title}/>
+                  <TemplateButton id={props.id}/>
                 </div>
             </div>
         </>

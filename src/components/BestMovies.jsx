@@ -6,7 +6,7 @@ import "./BestMovies.css"
 
 const BestMovies = () => {
     const [result, setResult] = useState([])
-
+    const [getID, setGetID] = useState(0)
     const apiKey = '4d58cfce7093e670754f1a8a8ceac28f';
     const [type, setType] = useState("")
     const changeResource = [
@@ -23,6 +23,7 @@ const BestMovies = () => {
         .get(`https://api.themoviedb.org/3/${type}?api_key=${apiKey}`)
         .then((response) => {
           setResult(response.data.results)
+          setGetID(result.id)
         })
           
         .catch((error) =>{
@@ -59,6 +60,7 @@ const BestMovies = () => {
              path={result.poster_path} 
              title={result.title}
              voteAverage={result.vote_average}
+             id={result.id}
              />
           ))}
         </div>
