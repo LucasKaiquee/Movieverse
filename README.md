@@ -1,4 +1,4 @@
-# Buscador de Filmes com OMDB API - MovieVerse
+# Buscador de Filmes com The Movie Database (TMDB) API - MovieVerse
 
 Bem-vindo ao Buscador de Filmes! Este projeto é um buscador de filmes e séries que utiliza a API OMDB para obter informações detalhadas sobre obras cinematográficas. Ele foi desenvolvido em React, JavaScript e CSS, e utiliza as bibliotecas Axios, React Icons, React Router Dom, e os Hooks useState e useEffect.
 
