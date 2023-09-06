@@ -18,12 +18,13 @@ const Home = () => {
                     <InputMovie />
                 </div>
 
+
             </header>
 
             <BestMovies />
             
             <footer>
-                <h4>Lucas Kaique &copy; 2023</h4>
+                <h4>Copyright © 2023 MovieVerse. Todos os direitos reservados.</h4>
             </footer>
         </>
     )

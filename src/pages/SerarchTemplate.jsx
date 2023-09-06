@@ -40,14 +40,14 @@ const SearchTemplate = () => {
         <div className="template">
             <Navbar test={1}/>
             <TemplateMovie 
-               movieTitle={result.title} 
-              // movieImg={imgT} 
-              // movieDescription={description} 
-              // movieGenre={genre} 
-              // movieYear={year} 
-              // movieActors={actors} 
-              // // movieDirector={director} 
-              // movieReating={imdb}
+              movieTitle={result.title} 
+              movieImg={result.poster_path} 
+              movieDescription={result.overview} 
+              movieTime={result.runtime} 
+              movieYear={result.release_date} 
+              movieBudget={result.budget} 
+              movieRevenue={result.revenue} 
+              movieReating={result.vote_average}
               // // movieAward={award}
             />
 
