@@ -5,6 +5,8 @@ import axios from "axios"
 import { useState, useEffect } from "react"
 import { useLocation } from "react-router-dom"
 
+import logo1 from "../assets/imgs/VectorLogo1.svg"
+
 import './SearchTemplate.css'
 
 const SearchTemplate = () => {
@@ -13,7 +15,6 @@ const SearchTemplate = () => {
 
   const location = useLocation()
   const state = location.state
-  console.log(state)
 
   const [result, setResult]  = useState('')
     
@@ -22,12 +23,10 @@ const SearchTemplate = () => {
       .get(url)
       .then((response) => { 
         setResult(response.data)
-        console.log(response.data)
       })
       .catch((error) => {
         console.error(error);
       });
-
 
   };
 
@@ -52,7 +51,12 @@ const SearchTemplate = () => {
             />
 
             <footer>
-                <h4>Lucas Kaique &copy; 2023</h4>
+                <div className="container-footer">
+                    <img src={logo1} alt="Logotipo" />
+                    <span>Movie Verse</span>
+                </div>
+        
+                <h4>Copyright © 2023 MovieVerse. Todos os direitos reservados.</h4>
             </footer>
         </div>
 
