@@ -1,9 +1,9 @@
 .template-button {
-    background-color: #FA023C;
+    background-color: var(--background-color);
     border: none;
     padding: 0.2rem 0.5rem;
     border-radius: 8px;
-    color: #ffff;
+    color: var(--primary-color);
     font-weight: bold;
     cursor: pointer;
 }

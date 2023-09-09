@@ -6,13 +6,13 @@ import "./TemplateButton.css"
 const TemplateButton = ({id}) => {
     const naviagte = useNavigate('')
 
-    const handleBestPage = () => {
+    const handleMoviePage = () => {
         naviagte('Search', {state: id})
     }
 
     return(
         <>
-            <button className="template-button" onClick={handleBestPage}>Detalhes</button>
+            <button className="template-button" onClick={handleMoviePage}>Detalhes</button>
         </>
     )
 }

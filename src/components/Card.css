@@ -11,7 +11,7 @@
     cursor: pointer;
 }
 
-.img-card:focus {
+.img-card:active {
     transform: scale(1.8);
     position: relative;
     z-index: 1;
@@ -22,7 +22,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: #4B000F;
+    background-color: var(--secondary-color);
     position: relative;
     padding: 0.5rem;
     bottom: 20px;

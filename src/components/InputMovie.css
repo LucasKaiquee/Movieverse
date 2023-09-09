@@ -1,6 +1,6 @@
 .container-input input {
     background-color: rgba(255, 255, 255, 0);
-    border: 2px solid #ffff;
+    border: 2px solid var(--secondary-color);
     height: 40px;
     border-radius: 10px;
     width: 250px;
@@ -10,7 +10,7 @@
 }
 
 .container-input input::placeholder {
-    color: #fff;
+    color: var(--secondary-color);
 }
 
 .container-input button {
@@ -21,8 +21,8 @@
     font-size: 16px;
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0);
-    border: 2px solid #ffff;
-    color: #fff;
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
 }
 
 .container-input button:hover {

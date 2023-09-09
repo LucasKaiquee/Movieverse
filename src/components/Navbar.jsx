@@ -1,7 +1,5 @@
-import InputMovie from "./InputMovie"
-import {FaFilm } from "react-icons/fa" 
-
 import { useNavigate } from "react-router-dom"
+import logo from "../assets/imgs/VectorLogo1.svg"
 
 import "./Navbar.css"
 
@@ -17,11 +15,13 @@ const Navbar = ({test}) => {
         <>
             <nav>
                 <div className="container-logo" onClick={hadleLogoClick}>
-                    <FaFilm color="#e803f8" size={35} className="fa"/>
-                    <h1>Movie Verse</h1>
+                    <img src={logo} alt="Logotipo" />
+                    <span>Movie Verse</span>
                 </div>
-                <div className="input">
-                    <InputMovie test={test}/>
+                <div className="container-navigation">
+                    <a href="" className="navigation">Home</a>
+                    <a href="" className="navigation">Recomendações</a>
+                    <a href="" className="navigation">Buscar</a>
                 </div>
             </nav>
         </>
