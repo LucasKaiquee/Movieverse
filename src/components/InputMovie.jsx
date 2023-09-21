@@ -10,9 +10,9 @@ const InputMovie = ({test}) => {
 
   const handleClickSearch = () => {
     if(test === 1){
-      navigate('/Search', {state: title})
+      navigate('/SearchArea', {state: title})
     } else {
-      navigate('Search', { state: title });
+      navigate('SearchArea', { state: title });
     }
   };
   
