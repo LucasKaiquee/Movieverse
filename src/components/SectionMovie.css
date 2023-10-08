@@ -39,11 +39,12 @@
 .container-movies {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
-    justify-content: center;
+    width: 110%;
+    justify-content: flex-start;
     margin: auto;
     align-items: center;
-    gap: 40px;
+    gap: 30px;
+    
 }
 
 @media screen and (max-width: 600px) {

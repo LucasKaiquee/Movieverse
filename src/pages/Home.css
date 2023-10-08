@@ -9,6 +9,8 @@
 
 .header img {
     align-self: flex-end;
+    position: relative;
+    top: 100px;
 }
 
 .container-header{

@@ -6,11 +6,18 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
+    max-width: 2560px;
     height: 70px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
     z-index: 2;
+    display: flex;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: auto;
 }
 
 .container-logo span {
@@ -44,7 +51,7 @@ nav {
 
 .container-navigation {
     display: flex;
-    gap: 1.4rem;
+    gap: 2rem;
     height: 30px;
 }
 

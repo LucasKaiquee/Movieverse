@@ -25,7 +25,7 @@
     background-color: var(--secondary-color);
     position: relative;
     padding: 0.5rem;
-    bottom: 20px;
+    bottom: 30px;
 }
 
 .container-card p {

@@ -37,16 +37,17 @@ html ::-webkit-scrollbar-track {
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 70px;
+  max-width: 2560px;
+  margin: auto;
 }
 
 body {
- background-color: var(--background-color);
+  background-color: var(--background-color);
 }
 
 p {
   line-height: 1.8rem;
 }
-
 
 footer {
   position: relative;
