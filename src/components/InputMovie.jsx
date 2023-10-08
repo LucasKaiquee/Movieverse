@@ -3,16 +3,18 @@ import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import Search from './Search';
 
+
+//A prop pageSate verifica qual a pagina na qual o input está sendo renderizado.
 // eslint-disable-next-line react/prop-types
-const InputMovie = ({test}) => {
+const InputMovie = ({pageState}) => {
   const [title, setTitle] = useState('');
   const navigate = useNavigate();
 
   const handleClickSearch = () => {
-    if(test === 1){
+    if(pageState === 'Home'){
       navigate('/SearchArea', {state: title})
-    } else {
-      navigate('SearchArea', { state: title });
+    } else if (pageState === 'Search') {
+      navigate('', { state: title });
     }
   };
   

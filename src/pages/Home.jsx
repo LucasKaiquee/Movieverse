@@ -18,7 +18,7 @@ const Home = () => {
                     <h2>Descubra Seu Filme Perfeito</h2>
                     <p>No Movie Verse, sua jornada cinematográfica começa aqui! Nosso buscador de filmes é sua ferramenta confiável para descobrir o filme perfeito para cada ocasião. Com uma vasta coleção de títulos e informações detalhadas, estamos aqui para ajudá-lo a encontrar a próxima história que vai cativar sua imaginação.</p>
 
-                    <InputMovie />
+                    <InputMovie pageState={'Home'}/>
                 </div>
 
                 <img src={logo} alt="" />

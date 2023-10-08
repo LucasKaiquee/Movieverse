@@ -1,13 +1,17 @@
-import { useNavigate } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
 
 import "./TemplateButton.css"
 
 // eslint-disable-next-line react/prop-types
 const TemplateButton = ({id}) => {
-    const naviagte = useNavigate('')
+    const navigate = useNavigate('')
+    const location = useLocation('');
+    const currentUrl = location.pathname;
 
     const handleMoviePage = () => {
-        naviagte('Search', {state: id})
+        if(currentUrl === '/SearchArea'){
+            navigate('../Search', {state: id})
+        } else navigate('/Search', {state: id})
     }
 
     return(

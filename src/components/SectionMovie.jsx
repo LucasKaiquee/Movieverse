@@ -22,7 +22,7 @@ const SectionMovie = () => {
         .get(`https://api.themoviedb.org/3/${type}?api_key=${apiKey}`)
         .then((response) => {
           setResult(response.data.results)
-          setGetID(result.id)
+          // setGetID(result.id)
         })
           
         .catch((error) =>{
@@ -42,7 +42,7 @@ const SectionMovie = () => {
 
     return (
       <section className="container-template">
-        <h1>Recomendações</h1>
+        <h1 id="teste">Recomendações</h1>
         <p>Descubra Filmes em destaque</p>
         <div className="select">
           <button className={type === changeResource[0] ? "button " + "button-active" : "button"} onClick={() => handleChangeResource(changeResource[0])}>Populares</button>

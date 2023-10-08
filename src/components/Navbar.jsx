@@ -4,7 +4,7 @@ import logo from "../assets/imgs/VectorLogo1.svg"
 import "./Navbar.css"
 
 // eslint-disable-next-line react/prop-types
-const Navbar = ({test}) => {
+const Navbar = () => {
     const navigate = useNavigate()
 
     const hadleLogoClick = () => {
@@ -14,14 +14,16 @@ const Navbar = ({test}) => {
     return (
         <>
             <nav>
-                <div className="container-logo" onClick={hadleLogoClick}>
-                    <img src={logo} alt="Logotipo" />
-                    <span>Movie Verse</span>
-                </div>
-                <div className="container-navigation">
-                    <a href="" className="navigation">Home</a>
-                    <a href="" className="navigation">Recomendações</a>
-                    <a href="" className="navigation">Buscar</a>
+                <div className="nav-content">
+                    <div className="container-logo" onClick={hadleLogoClick}>
+                        <img src={logo} alt="Logotipo" />
+                        <span>Movie Verse</span>
+                    </div>
+                    <div className="container-navigation">
+                        <a href="" className="navigation">Home</a>
+                        <a href="#teste" className="navigation">Recomendações</a>
+                        <a href="" className="navigation">Buscar</a>
+                    </div>
                 </div>
             </nav>
         </>
