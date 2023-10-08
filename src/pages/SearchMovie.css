@@ -1,0 +1,23 @@
+.search-movie-container {
+    width: 80%;
+    margin: auto;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.search-movie-container h3 {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    font-family: "Denk one";
+
+}
+
+.title-state {
+    font-size: 3rem;
+    color: var(--primary-color);
+    text-shadow: 0px 4px 2px rgba(0,0,0,0.6);
+    font-family: "Denk one";
+    margin-bottom: 20px;
+}
