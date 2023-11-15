@@ -1,0 +1,64 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 120px;
+    gap: 50px;
+    color: var(--text-color);
+}
+
+.movie-container {
+    width: 40%;
+}
+
+.container p {
+    width: 100%;
+}
+
+.poster {
+    width: 25%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    justify-self: flex-end;
+    gap: 20px;
+}
+
+.container h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    font-family: "Denk one";
+    color: var(--primary-color);
+    text-shadow: 0px 4px 2px rgba(0,0,0,0.6);
+}
+
+.content ul {
+    list-style: none;
+    font-size: 20px;
+}
+
+.content li {
+    padding-bottom: 1rem;
+}
+
+@media screen and (max-width: 800px) {
+    .content {
+        flex-direction: column-reverse;
+        gap: 50px;
+        margin-top: 40px;
+    }
+
+    .content ul {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    img {
+        width: 50%;
+        align-self: center;
+    }
+}
+

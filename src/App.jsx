@@ -4,7 +4,6 @@ import Home from './pages/Home'
 import SearchTemplate from './pages/SerarchTemplate'
 import SearchMovie from './pages/SearchMovie'
 
-
 function App(){
 
   return (

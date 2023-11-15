@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { FaStar } from "react-icons/fa";
-import TemplateButton from "../TemplateButton";
+import TemplateButton from "../TemplateButton/TemplateButton";
 // import { useNavigate } from "react-router-dom";
 
 import "./Card.css"

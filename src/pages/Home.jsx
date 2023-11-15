@@ -1,5 +1,5 @@
 import Navbar from "../components/NavBar/Navbar";
-import BestMovies from "../components/SectionMovie";
+import SectionMovie from "../components/SectionMovie/SectionMovie"
 import InputMovie from "../components/InputMovie/InputMovie";
 
 import logo from "../assets/imgs/VectorLogo2.svg"
@@ -24,7 +24,7 @@ const Home = () => {
                 <img src={logo} alt="" />
             </header>
 
-            <BestMovies />
+            <SectionMovie />
             
             <footer>
                 <div className="container-footer">

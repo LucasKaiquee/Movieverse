@@ -1,5 +1,5 @@
-import TemplateMovie from "../components/TemplateMovie"
-import Navbar from "../components/Navbar"
+import TemplateMovie from "../components/TemplateMovie/TemplateMovie"
+import Navbar from "../components/NavBar/Navbar"
 
 import axios from "axios"
 import { useState, useEffect } from "react"
