@@ -1,6 +1,6 @@
-import Navbar from "../components/Navbar";
+import Navbar from "../components/NavBar/Navbar";
 import BestMovies from "../components/SectionMovie";
-import InputMovie from "../components/InputMovie";
+import InputMovie from "../components/InputMovie/InputMovie";
 
 import logo from "../assets/imgs/VectorLogo2.svg"
 import logo1 from "../assets/imgs/VectorLogo1.svg"

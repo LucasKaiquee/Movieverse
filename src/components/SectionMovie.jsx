@@ -1,10 +1,11 @@
-import Card from "./Card";
+import Card from "./Card/Card";
 import axios from "axios";
 import { useState, useEffect} from "react"
 
 import "./SectionMovie.css"
 
 const SectionMovie = () => {
+  
     const [result, setResult] = useState([])
     const apiKey = '4d58cfce7093e670754f1a8a8ceac28f';
     const [type, setType] = useState("")

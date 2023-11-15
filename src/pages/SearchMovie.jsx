@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import Card from '../components/Card';
-import InputMovie from '../components/InputMovie';
-import Navbar from '../components/Navbar';
+import Card from '../components/Card/Card';
+import InputMovie from '../components/InputMovie/InputMovie';
+import Navbar from '../components/NavBar/Navbar';
 
 import axios from 'axios';
 
