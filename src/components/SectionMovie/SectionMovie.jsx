@@ -1,14 +1,15 @@
 import Card from "../Card/Card";
 import axios from "axios";
-import { useState, useEffect} from "react"
 
+import { useState, useEffect} from "react"
 import "./SectionMovie.css"
 
 const SectionMovie = () => {
   
     const [result, setResult] = useState([])
-    const apiKey = '4d58cfce7093e670754f1a8a8ceac28f';
+    const apiKey = import.meta.env.VITE_API_KEY;
     const [type, setType] = useState("")
+
     const changeResource = [
       "movie/popular",
       "movie/top_rated",
@@ -18,12 +19,11 @@ const SectionMovie = () => {
       "trending/all/week",
     ]
 
-    const searchMovie = (type) => {
+    const searchMovie = async (type) => {
       axios
-        .get(`https://api.themoviedb.org/3/${type}?api_key=${apiKey}`)
+        .get(`https://api.themoviedb.org/3/${type}?${apiKey}`)
         .then((response) => {
           setResult(response.data.results)
-          // setGetID(result.id)
         })
           
         .catch((error) =>{
