@@ -9,6 +9,8 @@ const InputMovie = ({pageState}) => {
   const [title, setTitle] = useState('');
   const navigate = useNavigate();
 
+  //Correção a fezer -> não deixar o input passar vazio: O valor do input vazio joga no title null, obtendo resultado na API.
+
   const handleClickSearch = () => {
     if(pageState === 'Home'){
       navigate('/SearchArea', {state: title})

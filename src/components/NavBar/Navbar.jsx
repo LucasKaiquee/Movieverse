@@ -20,8 +20,8 @@ const Navbar = () => {
                         <span>Movie Verse</span>
                     </div>
                     <div className="container-navigation">
-                        <a href="" className="navigation">Home</a>
-                        <a href="#teste" className="navigation">Recomendações</a>
+                        <a href="" className="navigation">Criar conta</a>
+                        <a href="#teste" className="navigation">Entrar</a>
                         <a href="" className="navigation">Buscar</a>
                     </div>
                 </div>

@@ -16,7 +16,6 @@ const SearchMovie = () => {
 
   const location = useLocation();
   const state = location.state;
-  console.log(state)
 
   const [result, setResult] = useState([]);
 

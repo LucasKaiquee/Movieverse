@@ -3,27 +3,52 @@ import axios from "axios";
 
 import { useState, useEffect} from "react"
 import "./SectionMovie.css"
+import Pagination from "../Pagination/pagination";
 
 const SectionMovie = () => {
   
     const [result, setResult] = useState([])
+    const [page, setPage] = useState(1)
+    const [totalPages, setTotalPages] = useState()
     const apiKey = import.meta.env.VITE_API_KEY;
     const [type, setType] = useState("")
 
     const changeResource = [
-      "movie/popular",
-      "movie/top_rated",
-      "movie/upcoming",
-      "movie/now_playing",
-      "trending/all/day",
-      "trending/all/week",
+      {
+        name: "movie/popular",
+        displayName: "Popular"
+      },
+      {
+        name: "movie/top_rated",
+        displayName: "Recomendações"
+      },
+      {
+        name: "movie/upcoming",
+        displayName: "Recentes"
+      },
+      {
+        name: "movie/now_playing",
+        displayName: "Em cartaz"
+      },
+      {
+        name: "trending/all/day",
+        displayName: "Destaques do dia"
+      },
+      {
+        name: "trending/all/week",
+        displayName: "Destaques da semana"
+      },
     ]
 
-    const searchMovie = async (type) => {
+    const searchMovie = async (type=changeResource[0].name) => {
       axios
-        .get(`https://api.themoviedb.org/3/${type}?${apiKey}`)
+        .get(`https://api.themoviedb.org/3/${type}?${apiKey}&page=${page}`)
         .then((response) => {
-          setResult(response.data.results)
+          if (page === 1) {
+            setResult(response.data.results)
+          } else {
+            setResult(prevResults => [...prevResults, ...response.data.results]);
+          } 
         })
           
         .catch((error) =>{
@@ -37,21 +62,25 @@ const SectionMovie = () => {
     };
 
     useEffect(() => {
-      searchMovie(changeResource[0])
-      setType(changeResource[0])
+      searchMovie(changeResource[0].name)
+      setType(changeResource[0].name)
     }, []); 
+
+    useEffect(() => {
+      searchMovie()
+    }, [page])
 
     return (
       <section className="container-template">
         <h1 id="teste">Recomendações</h1>
         <p>Descubra Filmes em destaque</p>
         <div className="select">
-          <button className={type === changeResource[0] ? "button " + "button-active" : "button"} onClick={() => handleChangeResource(changeResource[0])}>Populares</button>
-          <button className={type === changeResource[1] ? "button " + "button-active" : "button"} onClick={() => handleChangeResource(changeResource[1])}>Bem avaliados</button>
-          <button className={type === changeResource[2] ? "button " + "button-active" : "button"} onClick={() => handleChangeResource(changeResource[2])}>Recentes</button>
-          <button className={type === changeResource[3] ? "button " + "button-active" : "button"} onClick={() => handleChangeResource(changeResource[3])}>Em cartaz</button>
-          <button className={type === changeResource[4] ? "button " + "button-active" : "button"} onClick={() => handleChangeResource(changeResource[4])}>Destaques do dia</button>
-          <button className={type === changeResource[5] ? "button " + "button-active" : "button"} onClick={() => handleChangeResource(changeResource[5])}>Destaques da semana</button>
+          {
+            changeResource.map((e, i) => (
+              <button className={type === e.name ? "button " + "button-active" : "button"} key={i} onClick={() => handleChangeResource(e.name)}>{e.displayName}</button>
+            ))
+          }
+          
         </div>
         <div className="container-movies">
           {result.map((result, index) => (
@@ -63,6 +92,10 @@ const SectionMovie = () => {
              id={result.id}
              />
           ))}
+        </div>
+
+        <div className="show-more">
+            <button onClick={() => (setPage(page+1))}>Mostrar mais</button>
         </div>
       </section>
     );

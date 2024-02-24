@@ -47,6 +47,24 @@
     
 }
 
+.show-more {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.show-more button {
+    padding: 10px;
+    background-color: var(--secondary-color);
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 10px;
+}
+
+.show-more button:hover {
+    scale: 1.1;
+}
+
 @media screen and (max-width: 600px) {
     .best-p {
         font-size: 12px;
