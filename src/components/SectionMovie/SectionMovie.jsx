@@ -44,6 +44,8 @@ const SectionMovie = () => {
       axios
         .get(`https://api.themoviedb.org/3/${type}?${apiKey}&page=${page}`)
         .then((response) => {
+
+          //Corrigir o problema da paginação: Ao clicar em outra catgoria e a pagina for diferente de 1 ele pega o resultado e soma co array corrente.
           if (page === 1) {
             setResult(response.data.results)
           } else {
@@ -77,7 +79,10 @@ const SectionMovie = () => {
         <div className="select">
           {
             changeResource.map((e, i) => (
-              <button className={type === e.name ? "button " + "button-active" : "button"} key={i} onClick={() => handleChangeResource(e.name)}>{e.displayName}</button>
+              <button className={type === e.name ? "button " + "button-active" : "button"} key={i} onClick={() => {
+                handleChangeResource(e.name)
+                // setPage(1)
+              }}>{e.displayName}</button>
             ))
           }
           
