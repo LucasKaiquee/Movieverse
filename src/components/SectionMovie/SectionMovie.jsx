@@ -3,13 +3,13 @@ import axios from "axios";
 
 import { useState, useEffect} from "react"
 import "./SectionMovie.css"
-import Pagination from "../Pagination/pagination";
+// import Pagination from "../Pagination/pagination";
 
 const SectionMovie = () => {
   
     const [result, setResult] = useState([])
-    const [page, setPage] = useState(1)
-    const [totalPages, setTotalPages] = useState()
+    // const [page, setPage] = useState(1)
+    // const [totalPages, setTotalPages] = useState()
     const apiKey = import.meta.env.VITE_API_KEY;
     const [type, setType] = useState("")
 
@@ -42,15 +42,15 @@ const SectionMovie = () => {
 
     const searchMovie = async (type=changeResource[0].name) => {
       axios
-        .get(`https://api.themoviedb.org/3/${type}?${apiKey}&page=${page}`)
+        .get(`https://api.themoviedb.org/3/${type}?${apiKey}`)
         .then((response) => {
 
           //Corrigir o problema da paginação: Ao clicar em outra catgoria e a pagina for diferente de 1 ele pega o resultado e soma co array corrente.
-          if (page === 1) {
+          // if (page === 1) {
             setResult(response.data.results)
-          } else {
-            setResult(prevResults => [...prevResults, ...response.data.results]);
-          } 
+          // } else {
+          //   setResult(prevResults => [...prevResults, ...response.data.results]);
+          // } 
         })
           
         .catch((error) =>{
@@ -70,7 +70,7 @@ const SectionMovie = () => {
 
     useEffect(() => {
       searchMovie()
-    }, [page])
+    }, [])
 
     return (
       <section className="container-template">
@@ -99,9 +99,9 @@ const SectionMovie = () => {
           ))}
         </div>
 
-        <div className="show-more">
+        {/* <div className="show-more">
             <button onClick={() => (setPage(page+1))}>Mostrar mais</button>
-        </div>
+        </div> */}
       </section>
     );
   };
