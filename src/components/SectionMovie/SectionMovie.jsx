@@ -1,16 +1,13 @@
 import Card from "../Card/Card";
-import axios from "axios";
+import axiosApi from "../../config/axios";
 
 import { useState, useEffect} from "react"
 import "./SectionMovie.css"
-import Pagination from "../Pagination/pagination";
 
 const SectionMovie = () => {
   
     const [result, setResult] = useState([])
     const [page, setPage] = useState(1)
-    const [totalPages, setTotalPages] = useState()
-    const apiKey = import.meta.env.VITE_API_KEY;
     const [type, setType] = useState("")
 
     const changeResource = [
@@ -40,35 +37,24 @@ const SectionMovie = () => {
       },
     ]
 
-    const searchMovie = async (type=changeResource[0].name) => {
-      axios
-        .get(`https://api.themoviedb.org/3/${type}?${apiKey}&page=${page}`)
-        .then((response) => {
-          if (page === 1) {
-            setResult(response.data.results)
-          } else {
-            setResult(prevResults => [...prevResults, ...response.data.results]);
-          } 
-        })
-          
-        .catch((error) =>{
+    const searchMovie = async (resource) => {
+        try{
+          const response = await axiosApi.get(resource)
+          setResult(response.data.results)
+        } catch(error) {
           console.error(error)
-        })
+        }
     } 
 
     const handleChangeResource = (type) => {
       searchMovie(type)
       setType(type)
-    };
+    }
 
     useEffect(() => {
       searchMovie(changeResource[0].name)
       setType(changeResource[0].name)
-    }, []); 
-
-    useEffect(() => {
-      searchMovie()
-    }, [page])
+    }, [])
 
     return (
       <section className="container-template">

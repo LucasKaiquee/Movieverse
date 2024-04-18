@@ -5,35 +5,29 @@ import Card from '../components/Card/Card';
 import InputMovie from '../components/InputMovie/InputMovie';
 import Navbar from '../components/NavBar/Navbar';
 
-import axios from 'axios';
+import axiosApi from '../config/axios';
 
 import './SearchMovie.css'
 import logo1 from "../assets/imgs/VectorLogo1.svg"
 
 const SearchMovie = () => {
-  const apiKey = import.meta.env.VITE_API_KEY;
-  const searchUrl = import.meta.env.VITE_SEARCH;
 
   const location = useLocation();
   const state = location.state;
 
   const [result, setResult] = useState([]);
 
-  const getMovie = (url) => {
-    axios
-      .get(url)
-      .then((response) => {
-        setResult(response.data.results);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  };
-
-  console.log(result)
+  const getMovie = async (endpoint) => {
+    try{
+      const response = await axiosApi.get(endpoint);
+      setResult(response.data.results);
+    } catch(error) {
+      console.error(error)
+    }
+  }
 
   useEffect(() => {
-    const searchWithQueryURL = `${searchUrl}?${apiKey}&query=${state}`;
+    const searchWithQueryURL = `search/movie?query=${state}`;
     getMovie(searchWithQueryURL);
   }, [state]);
 
