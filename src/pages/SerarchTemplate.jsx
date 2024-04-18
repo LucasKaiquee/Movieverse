@@ -1,39 +1,32 @@
 import TemplateMovie from "../components/TemplateMovie/TemplateMovie"
 import Navbar from "../components/NavBar/Navbar"
-
-import axios from "axios"
 import { useState, useEffect } from "react"
 import { useLocation } from "react-router-dom"
 
 import logo1 from "../assets/imgs/VectorLogo1.svg"
+import axiosApi from "../config/axios"
 
 import './SearchTemplate.css'
 
 const SearchTemplate = () => {
-  const apiKey = import.meta.env.VITE_API_KEY;
-  const searchUrl = import.meta.env.VITE_API
-
   const location = useLocation()
   const state = location.state
 
   const [result, setResult]  = useState('')
     
-  const getMovie = (url) => {
-    axios 
-      .get(url)
-      .then((response) => { 
-        setResult(response.data)
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-
-  };
+  const getMovie = async (endpoint) => {
+    try {
+      const response = await axiosApi.get(endpoint)
+      setResult(response.data)
+    } catch(error){
+        console.error(error)
+    }
+  }
 
   useEffect(() => {
-    const searchWithQueryURL = `${searchUrl}${state}?${apiKey}`;
-    getMovie(searchWithQueryURL);
-  }, [state]);
+    const searchWithQueryURL = `/movie/${state}`
+    getMovie(searchWithQueryURL)
+  }, [state])
     return (
 
         <div className="template">
@@ -59,7 +52,6 @@ const SearchTemplate = () => {
                 <h4>Copyright © 2023 MovieVerse. Todos os direitos reservados.</h4>
             </footer>
         </div>
-
     )
 }
 
