@@ -1,13 +1,12 @@
 import Card from "../Card/Card";
 import axiosApi from "../../config/axios";
-
 import { useState, useEffect} from "react"
+import Loading from "../Loading/Loading";
 import "./SectionMovie.css"
 
 const SectionMovie = () => {
   
     const [result, setResult] = useState([])
-    const [page, setPage] = useState(1)
     const [type, setType] = useState("")
 
     const changeResource = [
@@ -69,7 +68,7 @@ const SectionMovie = () => {
           
         </div>
         <div className="container-movies">
-          {result.map((result, index) => (
+          {result.length > 0 ? result.map((result, index) => (
             <Card
              key={index} 
              path={result.poster_path} 
@@ -77,12 +76,12 @@ const SectionMovie = () => {
              voteAverage={result.vote_average}
              id={result.id}
              />
-          ))}
+          )) : <div className="loading"><Loading /></div>}
         </div>
 
-        <div className="show-more">
+        {/* <div className="show-more">
             <button onClick={() => (setPage(page+1))}>Mostrar mais</button>
-        </div>
+        </div> */}
       </section>
     );
   };

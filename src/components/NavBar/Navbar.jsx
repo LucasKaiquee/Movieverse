@@ -19,11 +19,11 @@ const Navbar = () => {
                         <img src={logo} alt="Logotipo" />
                         <span>Movie Verse</span>
                     </div>
-                    <div className="container-navigation">
+                    {/* <div className="container-navigation">
                         <a href="" className="navigation">Criar conta</a>
                         <a href="#teste" className="navigation">Entrar</a>
                         <a href="" className="navigation">Buscar</a>
-                    </div>
+                    </div> */}
                 </div>
             </nav>
         </>
