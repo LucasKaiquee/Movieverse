@@ -7,6 +7,7 @@ import logo1 from "../assets/imgs/VectorLogo1.svg"
 import axiosApi from "../config/axios"
 
 import './SearchTemplate.css'
+import Loading from "../components/Loading/Loading"
 
 const SearchTemplate = () => {
   const location = useLocation()
@@ -27,11 +28,11 @@ const SearchTemplate = () => {
     const searchWithQueryURL = `/movie/${state}`
     getMovie(searchWithQueryURL)
   }, [state])
-    return (
 
+    return (
         <div className="template">
             <Navbar test={1}/>
-            <TemplateMovie 
+            {result ? <TemplateMovie 
               movieTitle={result.title} 
               movieImg={result.poster_path} 
               movieDescription={result.overview} 
@@ -41,7 +42,7 @@ const SearchTemplate = () => {
               movieRevenue={result.revenue} 
               movieReating={result.vote_average}
               // // movieAward={award}
-            />
+            /> : <div className="loading"><Loading /></div>}
 
             <footer>
                 <div className="container-footer">

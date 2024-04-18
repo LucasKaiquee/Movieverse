@@ -39,12 +39,16 @@
 .container-movies {
     display: flex;
     flex-wrap: wrap;
-    width: 110%;
+    width: 100%;
+    min-height: 80vh;
     justify-content: flex-start;
     margin: auto;
     align-items: center;
-    gap: 30px;
-    
+    gap: 20px;
+}
+
+.loading {
+    margin: auto;
 }
 
 .show-more {

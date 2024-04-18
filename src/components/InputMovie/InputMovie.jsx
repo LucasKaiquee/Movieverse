@@ -14,7 +14,7 @@ const InputMovie = ({pageState}) => {
   const handleClickSearch = () => {
     if(pageState === 'Home'){
       navigate('/movie-search', {state: title})
-    } else if (pageState === '/movie-details') {
+    } else if (pageState === 'movie-search') {
       navigate('', { state: title })
     }
   }

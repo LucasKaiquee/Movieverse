@@ -3,6 +3,7 @@
     height: 300px;
     background-color: rgba(0, 224, 255, 0.31);
     cursor: pointer;
+    margin-bottom: 10px;
 }
 
 .img-card {
