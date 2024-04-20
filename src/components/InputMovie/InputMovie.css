@@ -1,33 +1,35 @@
 .container-input input {
-    background-color: rgba(255, 255, 255, 0);
+    background-color: var(--background-color);
     border: 2px solid var(--secondary-color);
     height: 40px;
     border-radius: 10px;
-    width: 250px;
-    color: #000;
+    width: 350px;
     font-size: 16px;
-    padding: 2px;
+    padding: 10px;
 }
 
 .container-input input::placeholder {
-    color: var(--secondary-color);
+    color: var(--primary-color);
     font-weight: bold;
 }
 
 .container-input button {
     height: 40px;
-    width: 80px;
+    width: 40px;
     font-weight: bold;
     border-radius: 10px;
     font-size: 16px;
     cursor: pointer;
-    background-color: rgba(255, 255, 255, 0);
+    background-color: var(--background-color);
     border: 2px solid var(--secondary-color);
-    color: var(--secondary-color);
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .container-input button:hover {
-    transform: scale(1.1);
+    transform: scale(1.04);
     transition: 0.3s;
 }
 
