@@ -1,29 +1,19 @@
 import Navbar from "../components/NavBar/Navbar";
-import SectionMovie from "../components/SectionMovie/SectionMovie"
+import SectionMovie from "../components/SectionMovie/SectionMovie";
 import InputMovie from "../components/InputMovie/InputMovie";
 
-import logo from "../assets/imgs/VectorLogo2.svg"
-import logo1 from "../assets/imgs/VectorLogo1.svg"
+import logo from "../assets/imgs/VectorLogo2.svg";
+import logo1 from "../assets/imgs/VectorLogo1.svg";
 
-import './Home.css'
+import "../styles/Home.css";
+import Header from "../components/Header/Header";
 
 const Home = () => {
    
     return (
         <>
             <Navbar/>
-            <header className="header">
-                <div className="container-header">  
-                    <h1>Bem-vindo ao MovieVerse</h1>
-                    <h2>Descubra Seu Filme Perfeito</h2>
-                    <p>No Movie Verse, sua jornada cinematográfica começa aqui! Nosso buscador de filmes é sua ferramenta confiável para descobrir o filme perfeito para cada ocasião. Com uma vasta coleção de títulos e informações detalhadas, estamos aqui para ajudá-lo a encontrar a próxima história que vai cativar sua imaginação.</p>
-
-                    <InputMovie pageState={'Home'}/>
-                </div>
-
-                <img src={logo} alt="" />
-            </header>
-
+            <Header />
             <SectionMovie />
             
             <footer>
