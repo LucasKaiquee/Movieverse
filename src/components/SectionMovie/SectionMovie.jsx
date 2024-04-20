@@ -4,6 +4,7 @@ import { useState, useEffect} from "react"
 import Loading from "../Loading/Loading";
 import categoryMovies from "../../util/categoryMovies"
 import "./SectionMovie.css"
+// import Pagination from "../Pagination/pagination";
 
 const SectionMovie = () => {
   
@@ -33,13 +34,12 @@ const SectionMovie = () => {
       <section className="container-template">
         <h1 id="teste">Recomendações</h1>
         <p>Descubra Filmes em destaque</p>
-        <div className="select">
+         <div className="select">
           {
             categoryMovies.map((e, i) => (
               <button className={type === e.name ? "button " + "button-active" : "button"} key={i} onClick={() => handleChangeResource(e.name)}>{e.displayName}</button>
             ))
           }
-          
         </div>
         <div className="container-movies">
           {result.length > 0 ? result.map((result, index) => (
