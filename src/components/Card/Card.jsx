@@ -10,7 +10,7 @@ const Card = (props) => {
     
     return (
         <>
-            <div className="container-card">
+            <div className={props.path ? "container-card" : "hidden"}>
                 <img className="img-card" title="Capa do filme" src={imgPath + props.path} />
                 <div className="content-card">
                   <p><FaStar color="#FFFF00" /> {props.voteAverage.toFixed(1)}</p>
