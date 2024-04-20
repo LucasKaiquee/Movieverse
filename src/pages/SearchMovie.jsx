@@ -1,15 +1,16 @@
+import axiosApi from "../config/axios";
+
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 import Card from "../components/Card/Card";
 import InputMovie from "../components/InputMovie/InputMovie";
 import Navbar from "../components/NavBar/Navbar";
-
-import axiosApi from "../config/axios";
-
-import "./SearchMovie.css";
-import logo1 from "../assets/imgs/VectorLogo1.svg";
 import Loading from "../components/Loading/Loading";
+
+import logo1 from "../assets/imgs/VectorLogo1.svg";
+
+import "../styles/SearchMovie.css";
 
 const SearchMovie = () => {
     const location = useLocation()
@@ -24,6 +25,7 @@ const SearchMovie = () => {
             const response = await axiosApi.get(endpoint)
               setResult(response.data.results)
               setIsLoading(false)
+              console.log(result)
         } catch (error) {
             console.error(error)
             setIsLoading(false)

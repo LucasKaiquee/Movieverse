@@ -1,8 +1,10 @@
-import './App.css'
-import { Routes, Route } from 'react-router-dom'
-import Home from './pages/Home'
-import SearchTemplate from './pages/SerarchTemplate'
-import SearchMovie from './pages/SearchMovie'
+import { Routes, Route } from 'react-router-dom';
+
+import Home from './pages/Home';
+import SearchTemplate from './pages/SerarchTemplate';
+import SearchMovie from './pages/SearchMovie';
+
+import './styles/App.css';
 
 function App(){
 

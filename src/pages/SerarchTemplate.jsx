@@ -1,13 +1,14 @@
-import TemplateMovie from "../components/TemplateMovie/TemplateMovie"
-import Navbar from "../components/NavBar/Navbar"
-import { useState, useEffect } from "react"
-import { useLocation } from "react-router-dom"
+import axiosApi from "../config/axios";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
-import logo1 from "../assets/imgs/VectorLogo1.svg"
-import axiosApi from "../config/axios"
+import TemplateMovie from "../components/TemplateMovie/TemplateMovie";
+import Navbar from "../components/NavBar/Navbar";
+import Loading from "../components/Loading/Loading";
 
-import './SearchTemplate.css'
-import Loading from "../components/Loading/Loading"
+import logo1 from "../assets/imgs/VectorLogo1.svg";
+
+import '../styles/SearchTemplate.css';
 
 const SearchTemplate = () => {
   const location = useLocation()
