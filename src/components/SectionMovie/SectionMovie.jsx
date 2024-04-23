@@ -39,7 +39,6 @@ const SectionMovie = () => {
               <button className={type === e.name ? "button " + "button-active" : "button"} key={i} onClick={() => handleChangeResource(e.name)}>{e.displayName}</button>
             ))
           }
-          
         </div>
         <div className="container-movies">
           {result.length > 0 ? result.map((result, index) => (

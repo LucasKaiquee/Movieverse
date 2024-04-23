@@ -15,7 +15,7 @@ const TemplateMovie = (props) =>{
                         <li className="item">Data de Lançamento: {props.movieYear}</li>
                         <li className="item">Orçamento: $ {props.movieBudget}</li>
                         <li className="item">Receita: $ {props.movieRevenue}</li>
-                        <li className="item">Nota: {props.movieReating}</li>
+                        <li className="item">Nota: {props.movieReating.toFixed(1)}</li>
                     </ul>
                     <p>{props.movieDescription}</p>
                 </div>

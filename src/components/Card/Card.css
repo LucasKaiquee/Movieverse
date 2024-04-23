@@ -4,12 +4,14 @@
     background-color: rgba(0, 224, 255, 0.31);
     cursor: pointer;
     margin-bottom: 10px;
+    border-radius: 5px;
 }
 
 .img-card {
     width: 100%;
     height: 100%;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 .img-card:active {
@@ -27,6 +29,8 @@
     position: relative;
     padding: 0.5rem;
     bottom: 30px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .container-card p {
