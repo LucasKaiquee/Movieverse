@@ -8,3 +8,21 @@
     align-self: flex-start;
     margin-top: 60px;
 }
+
+.trailer-title, .galery-title {
+    text-align: center;
+    font-size: 3rem;
+    color: var(--primary-color);
+    font-family: "Denk one";
+    color: var(--primary-color);
+    text-shadow: 0px 4px 2px rgba(0,0,0,0.6);
+    margin-bottom: 4rem;
+}
+
+.galery-title {
+    margin-top: 4rem;
+}
+
+iframe {
+    margin: auto;
+}
